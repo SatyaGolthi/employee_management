@@ -13,8 +13,10 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
 import org.springframework.format.annotation.DateTimeFormat;
@@ -30,20 +32,23 @@ import lombok.Setter;
 @Getter
 @Setter
 @JsonIgnoreProperties({"handler","hibernateLazyInitializer"})
+@SequenceGenerator(name="seq", initialValue=100001, allocationSize=1)
 public class Employee implements Serializable{
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator="seq")
 	@Column(name = "EMPID", updatable = false, nullable = false)
 	private int empId;
 	
 	
 	@NotNull( message="first name should contain alphabets only")	
+	@Pattern(regexp="[A-Z a-z]")
 	@Column(name = "FNAME") 
 	private String fName;
 	
 	
 	@NotNull (message="last name should contain alphabets only") 
+	//@Pattern(regexp = "{A-Za-z}*")
 	@Column(name = "LNAME", nullable = false)
 	private String lName;
 	
@@ -75,7 +80,7 @@ public class Employee implements Serializable{
 	@Column(name = "ADDRESS")
 	private String address;
 	
-	@NotNull
+
     @Column(name = "MOBILE_NUMBER", nullable = false)
 	private double mobileNumber;
 

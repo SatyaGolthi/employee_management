@@ -19,13 +19,6 @@ import lombok.ToString;
 public class GradeMaster {
 	
 	
-	
-	
-	/*@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name="ID")
-	private int empId;  */
-	
 	@Id
 	@Column(name="GRADE")
 	private String gradeCode;

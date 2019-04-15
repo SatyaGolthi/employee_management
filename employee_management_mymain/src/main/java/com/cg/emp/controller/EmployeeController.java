@@ -52,10 +52,9 @@ public class EmployeeController {
 	//............................... add Employee .....................................
 
 	@RequestMapping(value="/employee",method=RequestMethod.POST)
-	public Employee addEmployee(@RequestBody EmployeeDto employee/*, @PathVariable int empId*/) {
+	public Employee addEmployee(@RequestBody EmployeeDto employee) {
 
-		//Employee emp=employeeService.addEmployee(employee, empId);
-		//return emp;
+		
 		return employeeService.addEmployee(employee/*,empId*/);
 	}
 

@@ -17,11 +17,6 @@ import lombok.Setter;
 public class Department {
 	
 	
-	/*@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name="ID")
-	private int empId; */
-	
 	@Id
 	@Column(name="DEPT_ID")
 	private int deptId;
@@ -30,16 +25,6 @@ public class Department {
 	@Column(name="DEPT_NAME")
 	private String deptName;
 
-/*	public int getEmpId() {
-		return empId;
-	}
-
-	public void setEmpId(int empId) {
-		this.empId = empId;
-	} */
-
-
-	
 	
 
 }
