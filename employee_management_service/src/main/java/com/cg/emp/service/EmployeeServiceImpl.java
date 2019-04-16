@@ -3,6 +3,7 @@ package com.cg.emp.service;
 import java.util.List;
 import java.util.Optional;
 
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,6 +19,8 @@ import com.cg.emp.repository.GradeMasterRepository;
 @Service
 public class EmployeeServiceImpl implements EmployeeService {
 
+	//Logger log = Logger.getLogger(this.getClass());
+	
 	@Autowired
 	EmployeeRepository empRepo;
 

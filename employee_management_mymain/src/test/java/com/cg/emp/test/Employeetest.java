@@ -3,15 +3,14 @@ package com.cg.emp.test;
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.when;
 
+import java.util.Arrays;
 import java.util.List;
 
-import org.assertj.core.util.Arrays;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.runners.MockitoJUnitRunner;
-
+import org.mockito.junit.MockitoJUnitRunner;
 import com.cg.emp.dto.EmployeeDto;
 import com.cg.emp.entities.Department;
 import com.cg.emp.entities.Employee;
@@ -42,16 +41,16 @@ public class Employeetest {
 		emp.setGradeMaster("M1");
 		emp.setMaritalStatus("unmaried");
 		emp.setMobileNumber(972436243);		
-		//when(employRepo.findById(100001)).thenReturn(emp);
+	//	when(employRepo.findById(100001)).thenReturn(emp);
 }
 	
-	/*public void getEmployees() {
+	public void getEmployees() {
 		
-		List<Employee> employees= Arrays.asList();//asList();
+		List<Employee> employees= Arrays.asList();
 		when(employRepo.findAll()).thenReturn(employees);
 		List<Employee> expEmployees=employeeService.getEmployees();
 		assertEquals(employees,expEmployees);
-	} */
+	} 
 //comments
 	@Mock
 	DepartmentRepository deptRepo;
@@ -59,11 +58,11 @@ public class Employeetest {
 	@InjectMocks
 	private DepartmentServiceImpl deptService;
 	
-/*	public void getDepartments() {
+public void getDepartments() {
 		
 		List<Department> departments =Arrays.asList();
 		when(deptRepo.findAll()).thenReturn(departments);
 		List<Department> expDepartments=deptService.getDepartments();
 		assertEquals(departments,expDepartments);
-	} */
+	} 
 }
