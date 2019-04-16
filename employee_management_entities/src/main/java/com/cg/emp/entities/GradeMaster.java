@@ -7,6 +7,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
@@ -16,6 +18,7 @@ import lombok.ToString;
 @Entity
 @Table(name = "GRADEMASTER")
 @Data
+@JsonIgnoreProperties({"handler","hibernateLazyInitializer"})
 public class GradeMaster {
 	
 	

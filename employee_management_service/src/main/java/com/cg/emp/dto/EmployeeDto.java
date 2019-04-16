@@ -30,7 +30,7 @@ public class EmployeeDto implements Serializable{
 	private int empId;
 	
 	@NotNull( message="first name should contain alphabets only")	
-	@Pattern(regexp="[A-Z a-z]")
+//	@Pattern(regexp="[A-Z a-z]")
 	private String fName;
 	
 	private String lName;

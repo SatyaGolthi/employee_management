@@ -24,7 +24,7 @@ import com.cg.emp.service.EmployeeServiceImpl;
 public class Employeetest {
 	
 	@Mock
-	EmployeeRepository empRepo;
+	EmployeeRepository employRepo;
 	
 	@InjectMocks
 	private EmployeeServiceImpl employeeService;
@@ -42,16 +42,16 @@ public class Employeetest {
 		emp.setGradeMaster("M1");
 		emp.setMaritalStatus("unmaried");
 		emp.setMobileNumber(972436243);		
-		when(empRepo.findById(100001)).thenReturn(emp);
+		//when(employRepo.findById(100001)).thenReturn(emp);
 }
 	
-	public void getEmployees() {
+	/*public void getEmployees() {
 		
 		List<Employee> employees= Arrays.asList();//asList();
-		when(empRepo.findAll()).thenReturn(employees);
+		when(employRepo.findAll()).thenReturn(employees);
 		List<Employee> expEmployees=employeeService.getEmployees();
 		assertEquals(employees,expEmployees);
-	}
+	} */
 //comments
 	@Mock
 	DepartmentRepository deptRepo;
@@ -59,11 +59,11 @@ public class Employeetest {
 	@InjectMocks
 	private DepartmentServiceImpl deptService;
 	
-	public void getDepartments() {
+/*	public void getDepartments() {
 		
 		List<Department> departments =Arrays.asList();
 		when(deptRepo.findAll()).thenReturn(departments);
 		List<Department> expDepartments=deptService.getDepartments();
 		assertEquals(departments,expDepartments);
-	}
+	} */
 }

@@ -42,7 +42,7 @@ public class Employee implements Serializable{
 	
 	
 	@NotNull( message="first name should contain alphabets only")	
-	@Pattern(regexp="[A-Z a-z]")
+	//@Pattern(regexp="[A-Z a-z]")
 	@Column(name = "FNAME") 
 	private String fName;
 	
@@ -52,7 +52,7 @@ public class Employee implements Serializable{
 	@Column(name = "LNAME", nullable = false)
 	private String lName;
 	
-	@DateTimeFormat(pattern ="dd-MMM-yy") 
+	//@DateTimeFormat(pattern ="dd-MMM-yy") 
 	@NotNull
 	@Column(name = "DOJ")
 	private Date doj;
