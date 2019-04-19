@@ -7,15 +7,18 @@ import com.cg.emp.entities.Employee;
 
 public interface EmployeeService {
 	
-	public Employee addEmployee(EmployeeDto employee /*, int empId */);
+	public Employee addEmployee(EmployeeDto employee );
 	
 	public Employee getEmployee(int empId);
 	
 	public List<Employee> getEmployees();
+		
+	public List<Employee> getEmployeeByName(String fName);
 	
+	public Employee getEmployeeDetails(String designation,String gradeMaster,int department);
 	
 	public void deleteEmployee(int empId);
 	
-
+	public Employee updateEmployee(Employee employee, int empId);
 
 }

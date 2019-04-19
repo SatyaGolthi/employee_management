@@ -19,7 +19,7 @@ import com.cg.emp.repository.GradeMasterRepository;
 @Service
 public class EmployeeServiceImpl implements EmployeeService {
 
-	//Logger log = Logger.getLogger(this.getClass());
+
 	
 	@Autowired
 	EmployeeRepository empRepo;
@@ -31,14 +31,16 @@ public class EmployeeServiceImpl implements EmployeeService {
 	DepartmentRepository deptRepo;
 
 	@Override
-	public Employee addEmployee(EmployeeDto employeeDto/* , int empId */) {
+	public Employee addEmployee(EmployeeDto employeeDto) {
 
-		// TODO Auto-generated method stub
+		
 
 		Employee employee = new Employee();
 		employee.setFName(employeeDto.getFName());
 		employee.setLName(employeeDto.getLName());
-		employee.setDoj(employeeDto.getDoj());
+		employee.setDateOfbirth(employeeDto.getDateOfbirth());
+		employee.setDateOfjoining(employeeDto.getDateOfjoining());
+		employee.setDesignation(employeeDto.getDesignation());
 		employee.setGender(employeeDto.getGender());
 		employee.setMaritalStatus(employeeDto.getMaritalStatus());
 		employee.setAddress(employeeDto.getAddress());
@@ -51,11 +53,16 @@ public class EmployeeServiceImpl implements EmployeeService {
 	@Override
 	public Employee getEmployee(int empId) {
 		
-	
-
 		return empRepo.getOne(empId);
 
 	}
+	
+	@Override
+	public List<Employee> getEmployeeByName(String fName) {
+		
+		return empRepo.getEmployeeByName(fName);
+	}
+
 
 	@Override
 	public List<Employee> getEmployees() {
@@ -68,6 +75,23 @@ public class EmployeeServiceImpl implements EmployeeService {
 		empRepo.deleteById(empId);
 		
 	}
+	
+	@Override
+	public Employee updateEmployee(Employee employee, int empId) {
+		Employee empUpdate = (Employee) empRepo.getOne(empId);
+		empUpdate.setFName(employee.getFName());
+		empUpdate.setLName(employee.getLName());
+		empUpdate.setDesignation(employee.getDesignation());			
+		return empRepo.saveAndFlush(empUpdate);
+	}
+
+
+	public Employee getEmployeeDetails(String designation,String gradeMaster,int department) {
+		return empRepo.getEmployeeDetails( designation, gradeRepo.getOne(gradeMaster),deptRepo.getOne(department));
+	}
+
+
+	
 
 }
 

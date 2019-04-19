@@ -3,6 +3,8 @@ package com.cg.emp.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -52,7 +54,7 @@ public class EmployeeController {
 	//............................... add Employee .....................................
 
 	@RequestMapping(value="/employee",method=RequestMethod.POST)
-	public Employee addEmployee(@RequestBody EmployeeDto employee) {
+	public Employee addEmployee(@RequestBody @Valid EmployeeDto employee) {
 
 		
 		return employeeService.addEmployee(employee/*,empId*/);
@@ -64,6 +66,15 @@ public class EmployeeController {
 	public Employee getEmployee(@PathVariable int empId)
    {
 	return employeeService.getEmployee(empId);
+	   
+   }
+   
+   
+	//............................... get EmployeeDetails by fName.....................................
+   @RequestMapping(value="/employe/{fName}",method=RequestMethod.GET)
+	public List<Employee> getEmployeeByName(@PathVariable String fName)
+   {
+	return employeeService.getEmployeeByName(fName);
 	   
    }
    
@@ -84,6 +95,25 @@ public class EmployeeController {
 	   employeeService.deleteEmployee(empId);
 	   
    }
+   
+   
+//............................... Update Employee by Id   ....................................   
+
+   
+   @RequestMapping(value = "/employee/{empId}", method = RequestMethod.PUT)
+	public Employee updateEmployee(@RequestBody Employee employee,@PathVariable int empId) {
+		return employeeService.updateEmployee(employee,empId);
+	}
+   
+ //.............. get Employee Details by designation,gradeMaster,department   .................................... 
+   
+   
+   @RequestMapping(value="/employeeDetails/{designation}/{gradeMaster}/{department}")
+   public Employee getEmployeeDetails(@PathVariable String designation,@PathVariable String gradeMaster,@PathVariable int department) {
+	   
+	   return employeeService.getEmployeeDetails(designation, gradeMaster, department);
+   }
+   
    
 //............................... get All Departments   ....................................      
    

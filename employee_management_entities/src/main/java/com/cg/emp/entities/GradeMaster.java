@@ -6,6 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.Pattern;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -24,6 +25,7 @@ public class GradeMaster {
 	
 	@Id
 	@Column(name="GRADE")
+	
 	private String gradeCode;
 	
 	@Column(name="DESCRIPTION")
