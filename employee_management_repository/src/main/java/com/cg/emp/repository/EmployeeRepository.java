@@ -34,7 +34,7 @@ int updateEmployee(@Param(value="empId") int empId,@Param(value="fName") String 
 @Query("SELECT e  FROM Employee e WHERE e.fName LIKE %:fName% ")
 List<Employee> getEmployeeByName(@Param(value="fName") String fName);
 
-
+//come
 
 
 }
