@@ -95,4 +95,100 @@ public class Employee implements Serializable{
 	@Column(name = "MOBILE_NUMBER", nullable = false)
 	private long mobileNumber;
 
+	public int getEmpId() {
+		return empId;
+	}
+
+	public void setEmpId(int empId) {
+		this.empId = empId;
+	}
+
+	public String getfName() {
+		return fName;
+	}
+
+	public void setfName(String fName) {
+		this.fName = fName;
+	}
+
+	public String getlName() {
+		return lName;
+	}
+
+	public void setlName(String lName) {
+		this.lName = lName;
+	}
+
+	public Date getDateOfbirth() {
+		return dateOfbirth;
+	}
+
+	public void setDateOfbirth(Date dateOfbirth) {
+		this.dateOfbirth = dateOfbirth;
+	}
+
+	public Date getDateOfjoining() {
+		return dateOfjoining;
+	}
+
+	public void setDateOfjoining(Date dateOfjoining) {
+		this.dateOfjoining = dateOfjoining;
+	}
+
+	public String getDesignation() {
+		return designation;
+	}
+
+	public void setDesignation(String designation) {
+		this.designation = designation;
+	}
+
+	public Department getDepartment() {
+		return department;
+	}
+
+	public void setDepartment(Department department) {
+		this.department = department;
+	}
+
+	public GradeMaster getGradeMaster() {
+		return gradeMaster;
+	}
+
+	public void setGradeMaster(GradeMaster gradeMaster) {
+		this.gradeMaster = gradeMaster;
+	}
+
+	public String getGender() {
+		return gender;
+	}
+
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+
+	public String getMaritalStatus() {
+		return maritalStatus;
+	}
+
+	public void setMaritalStatus(String maritalStatus) {
+		this.maritalStatus = maritalStatus;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public long getMobileNumber() {
+		return mobileNumber;
+	}
+
+	public void setMobileNumber(long mobileNumber) {
+		this.mobileNumber = mobileNumber;
+	}
+
 }

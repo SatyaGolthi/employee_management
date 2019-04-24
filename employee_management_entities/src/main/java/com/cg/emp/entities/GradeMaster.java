@@ -37,5 +37,37 @@ public class GradeMaster {
 	@Column(name="MAXSAL")
 	private long maxSal;
 
+	public String getGradeCode() {
+		return gradeCode;
+	}
+
+	public void setGradeCode(String gradeCode) {
+		this.gradeCode = gradeCode;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public long getMinSal() {
+		return minSal;
+	}
+
+	public void setMinSal(long minSal) {
+		this.minSal = minSal;
+	}
+
+	public long getMaxSal() {
+		return maxSal;
+	}
+
+	public void setMaxSal(long maxSal) {
+		this.maxSal = maxSal;
+	}
+
 	
 }

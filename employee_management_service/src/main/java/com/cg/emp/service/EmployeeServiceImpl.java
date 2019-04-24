@@ -36,8 +36,8 @@ public class EmployeeServiceImpl implements EmployeeService {
 		
 
 		Employee employee = new Employee();
-		employee.setFName(employeeDto.getFName());
-		employee.setLName(employeeDto.getLName());
+		employee.setfName(employeeDto.getfName());
+		employee.setlName(employeeDto.getlName());
 		employee.setDateOfbirth(employeeDto.getDateOfbirth());
 		employee.setDateOfjoining(employeeDto.getDateOfjoining());
 		employee.setDesignation(employeeDto.getDesignation());
@@ -79,8 +79,8 @@ public class EmployeeServiceImpl implements EmployeeService {
 	@Override
 	public Employee updateEmployee(Employee employee, int empId) {
 		Employee empUpdate = (Employee) empRepo.getOne(empId);
-		empUpdate.setFName(employee.getFName());
-		empUpdate.setLName(employee.getLName());
+		empUpdate.setfName(employee.getfName());
+		empUpdate.setlName(employee.getlName());
 		empUpdate.setDesignation(employee.getDesignation());			
 		return empRepo.saveAndFlush(empUpdate);
 	}

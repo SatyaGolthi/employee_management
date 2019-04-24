@@ -73,8 +73,8 @@ public class Employeetest {
 		EmployeeDto empl = new EmployeeDto();
 		
 		empl.setEmpId(100001);
-		empl.setFName("Sanvika");
-		empl.setLName("Attili");
+		empl.setfName("Sanvika");
+		empl.setlName("Attili");
 		empl.setGender("female");
 		empl.setAddress("hyderabad");
 		empl.setMaritalStatus("unmaried");
@@ -84,8 +84,8 @@ public class Employeetest {
 		empl.setDepartment(101);
 		
 		Employee employee = new Employee();
-		employee.setFName(empl.getFName());
-		employee.setLName(empl.getLName());
+		employee.setfName(empl.getfName());
+		employee.setlName(empl.getlName());
 		employee.setDateOfbirth(empl.getDateOfbirth());
 		employee.setDateOfjoining(empl.getDateOfjoining());
 		employee.setDesignation(empl.getDesignation());
@@ -99,7 +99,7 @@ public class Employeetest {
 		Employee expected = employeeService.addEmployee(empl);
 		assertEquals(employee, expected);
 	}
-	
+	/*
 	@Test
 	public void updateEmployeeDetails() {
 		
@@ -113,7 +113,7 @@ public class Employeetest {
 		
 	}
 	
-	
+	*/
 	
 /*	public void getEmployeeDetails() {
 		
