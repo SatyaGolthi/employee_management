@@ -74,14 +74,12 @@ public class Employeetest {
 		
 		empl.setEmpId(100001);
 		empl.setFName("Sanvika");
-		empl.setLName("Golthi");
+		empl.setLName("Attili");
 		empl.setGender("female");
 		empl.setAddress("hyderabad");
 		empl.setMaritalStatus("unmaried");
 		empl.setMobileNumber(972436243);
-		empl.setDesignation("Associate");
-		//empl.setDateOfbirth(1998 - 09 - 20);
-		//empl.setDateOfjoining(2018 - 09 - 21);
+		empl.setDesignation("Associate");	
 		empl.setGradeMaster("M1");
 		empl.setDepartment(101);
 		
@@ -101,5 +99,36 @@ public class Employeetest {
 		Employee expected = employeeService.addEmployee(empl);
 		assertEquals(employee, expected);
 	}
+	
+	@Test
+	public void updateEmployeeDetails() {
+		
+		Employee emp = new Employee();
+		emp.setFName("Satya");
+		emp.setLName("Golthi");
+		emp.setDesignation("Analyst");
+		when(empRepo.saveAndFlush(Mockito.any(Employee.class))).thenReturn(emp);
+		Employee expected = employeeService.updateEmployee(emp,100001);
+		assertEquals(emp,expected);
+		
+	}
+	
+	
+	
+/*	public void getEmployeeDetails() {
+		
+		Employee emp = (Employee) empRepo.getEmployeeDetails( "Associate", gradeRepo.getOne("M1"),deptRepo.getOne(101));		
+		emp.setEmpId(100001);
+		emp.setFName("Sanvika");
+		emp.setLName("Attili");
+		emp.setGender("female");
+		emp.setAddress("hyderabad");
+		emp.setMaritalStatus("unmaried");
+		emp.setMobileNumber(972436243);
+		when(empRepo.findAll("Associate", gradeRepo.getOne("M1"),deptRepo.getOne(101)).thenReturn(emp);
+		Employee empExpected = employeeService.getEmployeeDetails(emp.getEmpId());
+		assertEquals(emp,empExpected);
+
+	}*/
 
 }

@@ -17,7 +17,7 @@ import com.cg.emp.entities.GradeMaster;
 @Repository
 public interface EmployeeRepository extends JpaRepository<Employee, Integer>{
 	
-//Employee findByfName(String fName);
+
 
 
 	@Query("SELECT e FROM Employee e WHERE e.designation=:designation or e.gradeMaster=:gradeMaster and e.department=:department")
@@ -34,7 +34,7 @@ int updateEmployee(@Param(value="empId") int empId,@Param(value="fName") String 
 @Query("SELECT e  FROM Employee e WHERE e.fName LIKE %:fName% ")
 List<Employee> getEmployeeByName(@Param(value="fName") String fName);
 
-//commi
+
 
 
 }
