@@ -3,6 +3,7 @@ package com.cg.emp.test;
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.when;
 
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
@@ -20,6 +21,7 @@ import com.cg.emp.repository.GradeMasterRepository;
 import com.cg.emp.service.DepartmentServiceImpl;
 import com.cg.emp.service.EmployeeServiceImpl;
 import com.cg.emp.service.GradeMasterServiceImpl;
+
 
 @RunWith(MockitoJUnitRunner.class)
 public class Employeetest {
@@ -99,36 +101,62 @@ public class Employeetest {
 		Employee expected = employeeService.addEmployee(empl);
 		assertEquals(employee, expected);
 	}
-	/*
+	
 	@Test
 	public void updateEmployeeDetails() {
 		
-		Employee emp = new Employee();
-		emp.setFName("Satya");
-		emp.setLName("Golthi");
-		emp.setDesignation("Analyst");
-		when(empRepo.saveAndFlush(Mockito.any(Employee.class))).thenReturn(emp);
-		Employee expected = employeeService.updateEmployee(emp,100001);
-		assertEquals(emp,expected);
+	EmployeeDto empl = new EmployeeDto();
+		
+		empl.setEmpId(100001);
+		empl.setfName("Sanvika");
+		empl.setlName("Attili");
+		empl.setDesignation("Associate");	
+				
+		Employee employee = new Employee();
+		employee.setfName(empl.getfName());
+		employee.setlName(empl.getlName());
+		
+		employee.setDesignation(empl.getDesignation());
+		when(empRepo.getOne(100001)).thenReturn(employee);
+		Employee expected = employeeService.updateEmployee(employee,employee.getEmpId() );
+		assertEquals(employee, expected);
+		
 		
 	}
 	
-	*/
 	
-/*	public void getEmployeeDetails() {
+	
+	public void getEmployeeDetails() {
+	EmployeeDto empl = new EmployeeDto();
 		
-		Employee emp = (Employee) empRepo.getEmployeeDetails( "Associate", gradeRepo.getOne("M1"),deptRepo.getOne(101));		
-		emp.setEmpId(100001);
-		emp.setFName("Sanvika");
-		emp.setLName("Attili");
-		emp.setGender("female");
-		emp.setAddress("hyderabad");
-		emp.setMaritalStatus("unmaried");
-		emp.setMobileNumber(972436243);
-		when(empRepo.findAll("Associate", gradeRepo.getOne("M1"),deptRepo.getOne(101)).thenReturn(emp);
-		Employee empExpected = employeeService.getEmployeeDetails(emp.getEmpId());
-		assertEquals(emp,empExpected);
+		empl.setEmpId(100001);
+		empl.setfName("Sanvika");
+		empl.setlName("Attili");
+		empl.setGender("female");
+		empl.setAddress("hyderabad");
+		empl.setMaritalStatus("unmaried");
+		empl.setMobileNumber(972436243);
+		empl.setDesignation("Associate");	
+		empl.setGradeMaster("M1");
+		empl.setDepartment(101);
+		
+		Employee employee = new Employee();
+		employee.setfName(empl.getfName());
+		employee.setlName(empl.getlName());
+		employee.setDateOfbirth(empl.getDateOfbirth());
+		employee.setDateOfjoining(empl.getDateOfjoining());
+		employee.setDesignation(empl.getDesignation());
+		employee.setGender(empl.getGender());
+		employee.setMaritalStatus(empl.getMaritalStatus());
+		employee.setAddress(empl.getAddress());
+		employee.setMobileNumber(empl.getMobileNumber());			
+		employee.setDepartment(deptRepo.getOne(empl.getDepartment()));
+		employee.setGradeMaster(gradeRepo.getOne(empl.getGradeMaster()));
+		when(empRepo.getOne(100001)).thenReturn(employee);
+		Employee expected = employeeService.getEmployee(employee.getEmpId());//getEmployees();
+		assertEquals(expected, employee);
 
-	}*/
+
+	}
 
 }

@@ -26,6 +26,11 @@ public class EmployeeExceptionHandler {
     	if(e.getCode() == 204) {
     		return new ResponseEntity<>(result,HttpStatus.NO_CONTENT);
     	}
+    	 else if(e.getCode() == 400)
+    	{
+    		return new ResponseEntity<>(result,HttpStatus.BAD_REQUEST);
+    	}
+    	
     		else {
 			 
     		return new ResponseEntity<>(result,HttpStatus.INTERNAL_SERVER_ERROR);
